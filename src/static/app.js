@@ -26,7 +26,12 @@ document.addEventListener("DOMContentLoaded", () => {
           participantsHtml = `
             <p><strong>Participantes inscritos:</strong></p>
             <ul>
-              ${details.participants.map(email => `<li>${email}</li>`).join("")}
+              ${details.participants.map(email => `
+                <li>
+                  <span class="participant-avatar">${email[0].toUpperCase()}</span>
+                  <span>${email}</span>
+                </li>
+              `).join("")}
             </ul>
           `;
         } else {
